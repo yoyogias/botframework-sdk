@@ -37,7 +37,7 @@ Visit azure.com for the primary [Azure Bot Service documentation page](https://d
 A rich set of samples are available at the [BotBuilder-Samples](https://github.com/microsoft/botbuilder-samples) repository.
 
 ## Questions and Help 
-If you have questions about Bot Builder SDK v3 or v4 Preview or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
+If you have questions about Bot Builder SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
 - For questions which fit the Stack Overflow format ("how does this work?"), we monitor the both [Azure-bot-service](https://stackoverflow.com/questions/tagged/azure-bot-service) and [bot framework](https://stackoverflow.com/questions/tagged/botframework) tags (search [both](https://stackoverflow.com/questions/tagged/azure-bot-service+or+botframework))
 - You can also tweet/follow [@msbotframework](https://twitter.com/msbotframework) 
 
@@ -57,17 +57,15 @@ We track functional issues and features asks for and Bot Builder and Azure Bot S
 |Emulator| Test and debug bots running locally or remote. | [File an issue](https://github.com/Microsoft/BotFramework-Emulator/issues)| 
 |Webchat | Embeddable web chat control for the Microsoft Bot Framework | [File an issue](https://github.com/Microsoft/BotBuilder/issues)|
 
+Join the conversation on **[Gitter](https://gitter.im/Microsoft/BotBuilder)**.
+
+See all the support options **[here](https://docs.microsoft.com/en-us/bot-framework/resources-support)**.
+
 ## Adding intelligence to your bot
 With the power of [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/), your bots can interact with your customers in more human ways. The following are common services that bots utilize: 
 - [LUIS](https://www.luis.ai)
 - [QnA Maker](https://www.qnamaker.ai/)
 - [Speech](https://azure.microsoft.com/services/cognitive-services/directory/speech/)
-
-Join the conversation on **[Gitter](https://gitter.im/Microsoft/BotBuilder)**.
-
-See all the support options **[here](https://docs.microsoft.com/en-us/bot-framework/resources-support)**.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Prior releases
 - Bot Builder V3 SDK 
@@ -97,4 +95,7 @@ Security issues and bugs should be reported privately, via email, to the Microso
 Copyright (c) Microsoft Corporation. All rights reserved.
 
 Licensed under the [MIT](https://github.com/Microsoft/vscode/blob/master/LICENSE.txt) License.
+
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
