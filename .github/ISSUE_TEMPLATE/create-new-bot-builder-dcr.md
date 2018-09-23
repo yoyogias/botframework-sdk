@@ -1,6 +1,7 @@
 ---
 name: Create new Bot Builder DCR
-about: 'Create and track a Design Change Request for the Bot Builder architecture '
+about: "(DO NOT FILE BUGS HERE) Create and track a Design Change Request for the Bot
+  Builder architecture "
 
 ---
 
