@@ -1182,15 +1182,15 @@ The `entities` field contains entities associated with this action. The value of
 17. [RFC 6557](https://tools.ietf.org/html/rfc6557)
 
 # Appendix I - Changes
-## 2018-09-18 - toddne@microsoft.com
-
-* Added localTimezone property
-
 
 ## 2018-09-23 - dandris@microsoft.com
 
 * Revised reference descriptions and links
 * Clarified syntatic rules, revised `A2003`, added `A2007`
+
+## 2018-09-18 - toddne@microsoft.com
+
+* Added localTimezone property
 
 ## 2018-08-27 - daveta@microsoft.com
 
