@@ -71,7 +71,7 @@ With the power of [Azure Cognitive Services](https://azure.microsoft.com/service
 - Bot Builder V3 SDK 
     - Has been migrated to the [BotBuilder-V3](https://github.com/microsoft/botbuilder-v3) repository.
 - Bot Framework Emulator 
-    - [Bot Frameowrk **V3 Emulator** (stable release)](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36)
+    - [Bot Framework **V3 Emulator** (stable release)](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36)
 
 ## Contributing
 
