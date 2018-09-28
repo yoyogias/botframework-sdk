@@ -51,6 +51,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 An implementation is not compliant if it fails to satisfy one or more of the MUST or REQUIRED level requirements for the protocols it implements. An implementation that satisfies all the MUST or REQUIRED level and all the SHOULD level requirements for its protocols is said to be "unconditionally compliant"; one that satisfies all the MUST level requirements but not all the SHOULD level requirements for its protocols is said to be "conditionally compliant."
 
+Explanatory text describes the intent. Editors are encouraged to omit normative statements from explanatory text. All [numbered requirements](#Numbered-requirements) are normative. All examples are non-normative.
+
 ### Numbered requirements
 
 Lines beginning with markers of the form `AXXXX` are specific requirements designed to be referenced by number in discussion outside of this document. They do not carry any more or less weight than normative statements made outside of `AXXXX` lines.
@@ -264,6 +266,10 @@ The `entities` field contains a flat list of metadata objects pertaining to this
 `A2102`: Senders MUST NOT include two or more entities with identical types and contents.
 
 `A2103`: Senders and receivers SHOULD NOT rely on specific ordering of the entities included in an activity.
+
+`A2104`: Receivers MUST ignore entities whose types they do not understand.
+
+`A2105`: Receivers SHOULD ignore entities whose type they understand but are unable to process due to e.g. syntactic errors.
 
 ### Channel data
 
@@ -1073,23 +1079,27 @@ The `role` field indicates whether entity behind the account is a user or bot. T
 
 ### Entity
 
-Entities carry metadata about an activity or conversation. Each entity's meaning and shape is defined by the `type` field, and additional type-specific fields sit as peers to the `type` field.
+Entities carry metadata about an activity or conversation. Each entity's meaning and shape is defined by the `type` field. Additional type-specific fields sit as peers to the `type` field.
 
-`A7600`: Receivers MUST ignore entities whose types they do not understand.
+Some non-Bot-Framework entities may have a preexisting field called `type`. Parties integrating these entities into the activity entity format are advised to define field-level mapping to resolve conflicts with the `type` field name and other incompatibilities with serialization requirement `A2001` as part of the IRI defining the entity type.
 
-`A7601`: Receivers SHOULD ignore entities whose type they understand but are unable to process due to e.g. syntactic errors.
+Frequently, entities used within Bot Framework are also expressed elsewhere using [JSON-LD](https://www.w3.org/TR/json-ld/) [[18](#References)]. The entity format is designed to be compatible with JSON-LD contexts, but does not require senders or receivers to implement JSON-LD to successfully process an entity.
 
-Parties projecting an existing entity type into the activity entity format are advised to resolve conflicts with the `type` field name and incompatibilities with serialization requirement `A2001` as part of the binding between the IRI and the entity schema.
+`A7603`: Senders MAY include [JSON-LD](https://www.w3.org/TR/json-ld/) [[18](#References)] fields within entities.
 
-#### Type
+`A7604`: Senders MUST NOT expect or require [JSON-LD](https://www.w3.org/TR/json-ld/) [[18](#References)] processing to parse an entity.
 
-The `type` field is required, and defines the meaning and shape of the entity. `type` is intended to contain [IRIs](https://tools.ietf.org/html/rfc3987) [[4](#References)] although there are a small number on non-IRI entity types defined in [Appendix I](#Appendix-II---Non-IRI-entity-types).
+#### Entity type
+
+The `type` field is required, and defines the meaning and shape of the entity. `type` is intended to contain [IRIs](https://tools.ietf.org/html/rfc3987) [[4](#References)] although there are a small number on non-IRI entity types defined in [Appendix I](#Appendix-II---Non-IRI-entity-types). The value of the `type` field is a string.
 
 `A7610`: Senders SHOULD use non-IRI types names only for types described in [Appendix II](#Appendix-II---Non-IRI-entity-types).
 
 `A7611`: Senders MAY send IRI types for types described in [Appendix II](#Appendix-II---Non-IRI-entity-types) if they have knowledge that the receiver understands them.
 
 `A7612`: Senders SHOULD use or establish IRIs for entity types not defined in [Appendix II](#Appendix-II---Non-IRI-entity-types).
+
+`A7613`: Senders MUST NOT use relative IRIs within the `type` field, nor require JSON-LD IRI resolution to understand a type identifier.
 
 ### Suggested actions
 
@@ -1151,15 +1161,71 @@ The `id` field establishes the identity for the action, and is associated with a
 
 #### Semantic action entities
 
-The `entities` field contains entities associated with this action. The value of the `entities` field is a complex object; the keys of this object are entity names and the values of each key is the corresponding entity value. The types of each value are defined by the enclosing action.
+The `entities` field contains entities associated with this action. The value of the `entities` field is a complex object; the keys of this object are entity names and the values of each key is the corresponding entity values of type [entity](#Entity). The meaning of each entity is defined by the enclosing action and the entity name. An additional field named `$instance` occurs after the named entities. The value of the `$instance` field is of type [`entityInstance`](#Entity-instance).
 
 `A7740`: Unless otherwise specified, senders MAY omit some or all entities associated with an action definition.
 
-`A7741`: Senders SHOULD preserve the order of entities as defined for the action, even if entities early in the list are omitted.
+`A7742`: Senders MAY add entities with unknown keys if they have special knowledge that the bot supports them.
 
-`A7742`: Senders MAY add entities with unknown keys if they have special knowledge that the bot supports them. These extended entities MUST be added after entities defined for the action.
+Actions support dynamic typing. An implementer of an action expresses a list of types it prefers, and callers of that action can match the desired types with known entities of varying fidelity. For example, assume an action prefers to receive a destination in the form of a *city* entity. The caller may not have a city available, but is able to supply either a *string* or *geocoordinates* based on what it was able to extract from the conversation. The caller can examine the action's preferred types and send the *string* or *geocoordinates* if the action can handle it.
 
-`A7743`: Senders SHOULD only send complex objects as entity values. They SHOULD NOT send primitives or arrays.
+`A7744`: Senders MAY send downgraded entities in accordance with the rules outlined in the action definition.
+
+Entities sent within the semantic action have a specific meaning, defined by their name. For example, an action may be named `findRoute` with entities named `source` and `destination`. Sometimes, additional entities are available that do not fit a specific meaning within the action. The root [`entities`](#Entities) array is a suitable location to transmit these entities.
+
+`A7745`: Senders MAY send entities not listed in the action definition in the [`entities`](#Entities) array in the activity root. Senders SHOULD NOT send these entities in the semnatic action.
+
+The `$instance` field carries metadata about the source of each entity. The keys of this object are identical to the entity names as peers. The values of each key is the corresponding instance metadata of type [`semanticEntityInstance`](#Semantic-entity-instance).
+
+`A7746`: Senders SHOULD include properties within `$instance` for any entities bearing instance metadata.
+
+`A7747`: Senders SHOULD NOT include empty fields within `$instance` or an empty `$instance` object.
+
+`A7748`: Senders MUST NOT include a `$instance` field within the `$instance` object.
+
+Example of semantic action entities
+```
+"entities": {
+    "sourceAirport": {
+        "type": "http://icao.org/airport/code"
+        "code": "KSEA",
+        "name": "Seattle-Tacoma International Airport",
+    },
+    "destinationAirport": {
+        "type": "http://schema.org/City",
+        "name": "New York",
+        "geo": {
+            "type": "http://schema.org/GeoCoordinates",
+            "latitude": 40.7127,
+            "longitude": -74.0059
+        }
+    },
+    "$instance": {
+        "sourceAirport": {
+            "text": "SeaTac",
+            "startIndex": 19,
+            "endIndex": 25
+        },
+        "destinationAirport": {
+            "text": "New York",
+            "startIndex": 29,
+            "endIndex": 37
+        }
+    }
+}
+```
+
+### Semantic entity instance
+
+The `semanticEntityInstance` type references to source information about where the entity was mentioned. This specification includes source data to refer to the `text` field although others may be added in the future. The value of the `$instance` field is a complex object with fields `text`, `startIndex`, and `endIndex`. The `text` field is a string containing a copy of the text within the [`text`](#Text) field in the activity root; `startIndex` is a number containing the index of the first character where `text` is found (inclusive); `endIndex` is a number containing the index after the last character where `text` is found (exclusive).
+
+`A7750`: Senders MUST NOT include the `$instance` field if its `text` field is empty or null or the contents of its `text` field cannot be found within the `text` field in the activity root.
+
+`A7751`: The `startIndex` field MUST be an integer greater than or equal to zero and less than the length of the `text` field in the activity root.
+
+`A7752`: The `endIndex` field MUST be an integer greater than zero and less than or equal to the length of the `text` field in the activity root. Its value MUST be greater than the `startIndex` value.
+
+`A7753`: The contents of the `text` field within `$instance` MUST contain characters ordinally identical to the value of the `text` field in the activity root starting at `startIndex` characters from the beginning and ending immediately before `endIndex` characters from the beginning.
 
 ## References
 
@@ -1180,13 +1246,19 @@ The `entities` field contains entities associated with this action. The value of
 15. [RFC 4627](http://www.ietf.org/rfc/rfc4627.txt) -- *The application/json Media Type for JavaScript Object Notation (JSON)*
 16. [Transcript](../transcript/transcript.md)
 17. [RFC 6557](https://tools.ietf.org/html/rfc6557)
+18. [JSON-LD](https://www.w3.org/TR/json-ld/) -- *A JSON-based serialization for Linked Data*
 
 # Appendix I - Changes
 
-## 2018-09-23 - dandris@microsoft.com
+## 2018-09-27 - dandris@microsoft.com
 
 * Revised reference descriptions and links
 * Clarified syntatic rules, revised `A2003`, added `A2007`
+* Removed `A7743` as redundant
+* Removed ordering requirement for semantic action entities (`A7741`)
+* Added `$instance` to semantic action entities
+* Added action type downgrading
+* Move `A7600` and `A7601` and re-introduce as `A2104` and `A2105`
 
 ## 2018-09-18 - toddne@microsoft.com
 
@@ -1227,17 +1299,31 @@ The `entities` field contains entities associated with this action. The value of
 
 Activity [entities](#Entity) communicate extra metadata about the activity, such as a user's location or the version of the messaging app they're using. Activity types are intended to be IRIs, but a small list of non-IRI names are in common use. This appendix is an exhaustive list of the supported non-IRI entity types.
 
-| Type           | URI equivalent                          | Description               |
+| Type           | IRI equivalent                          | Description               |
 | -------------- | --------------------------------------- | ------------------------- |
-| GeoCoordinates | https://schema.org/GeoCoordinates/      | Schema.org GeoCoordinates |
+| GeoCoordinates | http://schema.org/GeoCoordinates/       | Schema.org GeoCoordinates |
 | Mention        | https://botframework.com/schema/mention | @-mention                 |
-| Place          | https://schema.org/Place                | Schema.org place          |
-| Thing          | https://schema.org/Thing                | Schema.org thing          |
+| Place          | http://schema.org/Place                 | Schema.org Place          |
+| Thing          | http://schema.org/Thing                 | Schema.org Thing          |
+| string         | N/A                                     | String                    |
+| number         | N/A                                     | Number                    |
 | clientInfo     | N/A                                     | Skype client info         |
+
+### string and number
+
+The `string` and `number` primitive entity types contains simple values within the `value` field. The `value` field is a string or number, respectively.
+
+Example:
+```
+{
+    "type": "string",
+    "value": "This is the string value"
+}
+```
 
 ### clientInfo
 
-The clientInfo entity contains extended information about the client software used to send a user's message. It contains three properties, all of which are optional.
+The `clientInfo` entity type contains extended information about the client software used to send a user's message. It contains three properties, all of which are optional.
 
 `A9201`: Bots SHOULD NOT send the `clientInfo` entity.
 
