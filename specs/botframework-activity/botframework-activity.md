@@ -343,7 +343,7 @@ The `speak` field indicates how the activity should be spoken via a text-to-spee
 
 `A3031`: Receivers unable to generate speech SHOULD ignore the `speak` field.
 
-`A3032`: If no root SSML element is found, receivers MUST consider the included text to be the inner content of an SSML `<speak>` tag, prefaced with a valid [XML Prolog](https://www.w3.org/TR/xml/#sec-prolog-dtd) [[8](#References), and otherwise upgraded to be a valid SSML document.
+`A3032`: If no root SSML element is found, receivers MUST consider the included text to be the inner content of an SSML `<speak>` tag, prefaced with a valid [XML Prolog](https://www.w3.org/TR/xml/#sec-prolog-dtd) [[8](#References)], and otherwise upgraded to be a valid SSML document.
 
 `A3033`: Receivers SHOULD NOT use XML DTD or schema resolution to include remote resources from outside the communicated XML fragment.
 
