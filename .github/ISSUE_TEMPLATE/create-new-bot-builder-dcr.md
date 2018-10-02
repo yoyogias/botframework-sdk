@@ -48,6 +48,20 @@ To file an issue against a component please go to the components repo
 - [ ] PR
 - [ ] Merged
 
+**Emulator**
+- [ ] PR
+- [ ] Merged
+
+**Samples**
+- [ ] PR
+- [ ] Merged
+
+
+**Docs**
+- [ ] PR
+- [ ] Merged
+
+
 **Tools**
 - [ ] PR
 - [ ] Merged
