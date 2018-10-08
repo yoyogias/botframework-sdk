@@ -4,15 +4,15 @@ Bot Builder is comprised of SDK and tools that enable you to build and connect i
 
 Bot Builder provides the most comprehensive experience for building conversation applications and includes the following SDKs and tools:
 
-- Bot Builder V4 SDK
+- **Bot Builder V4 SDK**
     - [**C#** (stable release)](https://github.com/microsoft/botbuilder-dotnet)
     - [**JS** (stable release)](https://github.com/microsoft/botbuilder-js)
     - [**Java** (preview release)](https://github.com/microsoft/botbuilder-java)
     - [**Python** (preview release)](https://github.com/microsoft/botbuilder-python).
-- Bot Framework Emulator (local debugging and visualization of conversations)
+- **Bot Framework Emulator** (local debugging and visualization of conversations)
     - [Bot Framework **V4 Emulator** (preview release)](https://github.com/microsoft/botframework-emulator).
     - [Bot Frameowrk **V3 Emulator** (stable release)](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36)
-- Bot Builder CLI tools (streamlined development, provisioning, and deployment)
+- **Bot Builder CLI tools** (streamlined development, provisioning, and deployment)
     - [MSBot CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot)
     - [AZ Bot CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
     - [Dispatch CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
@@ -21,7 +21,7 @@ Bot Builder provides the most comprehensive experience for building conversation
     - [LuisGen CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen)
     - [QnAMaker CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker)
     - [Chatdown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Chatdown)
-- Bot Framework webchat (embeddable and customizable open source web chat control) 
+- **Bot Framework webchat** (embeddable and customizable open source web chat control) 
     - [Available here](https://github.com/microsoft/botframework-webchat)
 
 
