@@ -9,18 +9,19 @@ Bot Builder provides the most comprehensive experience for building conversation
     - [**JS** (stable release)](https://github.com/microsoft/botbuilder-js)
     - [**Java** (preview release)](https://github.com/microsoft/botbuilder-java)
     - [**Python** (preview release)](https://github.com/microsoft/botbuilder-python).
-- Bot Framework Emulator 
+- Bot Framework Emulator (local debugging and visualization of conversations)
     - [Bot Framework **V4 Emulator** (preview release)](https://github.com/microsoft/botframework-emulator).
     - [Bot Frameowrk **V3 Emulator** (stable release)](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36)
-- Bot Builder CLI tools (**stable release**)
-    - [Chatdown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Chatdown)
+- Bot Builder CLI tools (streamlined development, provisioning, and deployment)
     - [MSBot CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot)
-    - [Ludown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown)
-    - [LUIS CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS)
-    - [QnAMaker CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker)
+    - [AZ Bot CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
     - [Dispatch CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
+    - [LUIS CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS)
+    - [Ludown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown)
     - [LuisGen CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen)
-- Bot Framework webchat
+    - [QnAMaker CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker)
+    - [Chatdown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Chatdown)
+- Bot Framework webchat (embeddable and customizable open source web chat control) 
     - [Available here](https://github.com/microsoft/botframework-webchat)
 
 
