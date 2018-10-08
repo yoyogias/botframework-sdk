@@ -209,7 +209,7 @@ The `image` field contains a placeholder image to be used in place of the media.
 
 #### Media card media
 
-The `media` field contains one or more formats of the same media to be presented. The value of the `media` field is an array of complex objects of type ['mediaUrl'](#Media-URL).
+The `media` field contains one or more alternative formats of the same media to be presented. The value of the `media` field is an array of complex objects of type ['mediaUrl'](#Media-URL).
 
 `C6401`: If a receiver receives multiple objects within the `media` array, it MAY prefer media whose `profile` field it understands.
 
@@ -254,6 +254,14 @@ This field is advisory in nature only. The media's actual aspect ratio should be
 `C6903`: Senders SHOULD NOT include `aspect` values if the media does not have a visual aspect ration and if no [`image`](#Media-card-image) field is supplied.
 
 `C6904`: Senders SHOULD NOT include values other than `16:9` or `4:3` unless it has knowledge that the receiver supports it.
+
+#### Media card duration
+
+The `duration` field describes the length of the media content without requiring a receiver to open the content. The value of the `duration` field is a string in [ISO 8601 duration format]((https://www.iso.org/iso-8601-date-and-time-format.html) [[3](#References)]).
+
+`C6920`: Senders SHOULD only send values in the ISO 8601 Duration format. Senders SHOULD NOT send times or time intervals in the `duration` field.
+
+`C6930`: Receivers SHOULD ignore `duration` fields they do not understand or which are in conflict with length encoded into the media.
 
 #### Media card value
 
@@ -465,8 +473,13 @@ The `value` field contains the objective component of the fact. The value of the
 4. [RFC 2119](https://tools.ietf.org/html/rfc2119)
 5. [MIME media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
 6. [RFC 2397](https://tools.ietf.org/html/rfc2397)
+7. [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
 
 # Appendix I - Changes
+
+## 2018-10-08 - dandris@microsoft.com
+
+* Add [`duration`](#Media-card-duration) field
 
 ## 2018-07-05 - dandris@microsoft.com
 
