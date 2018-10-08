@@ -257,7 +257,7 @@ This field is advisory in nature only. The media's actual aspect ratio should be
 
 #### Media card duration
 
-The `duration` field describes the length of the media content without requiring a receiver to open the content. The value of the `duration` field is a string in [ISO 8601 duration format]((https://www.iso.org/iso-8601-date-and-time-format.html) [[3](#References)]).
+The `duration` field describes the length of the media content without requiring a receiver to open the content. The value of the `duration` field is a string in [ISO 8601 duration format]((https://www.iso.org/iso-8601-date-and-time-format.html) [[7](#References)]).
 
 `C6920`: Senders SHOULD only send values in the ISO 8601 Duration format. Senders SHOULD NOT send times or time intervals in the `duration` field.
 
