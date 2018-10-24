@@ -122,7 +122,7 @@ Activity objects include a flat list of name/value pairs, called fields. Fields 
 
 `A2006`: Receivers SHOULD accept events of types they do not understand.
 
-This document defines data types for fields used within the Activity object. These type definitions include a syntactic type (e.g. `string` or `complex type`) and in the case of strings, an optional format (e.g. [ISO 8601 date time format]((https://www.iso.org/iso-8601-date-and-time-format.html) [[3](#References)]).
+This document defines data types for fields used within the Activity object. These type definitions include a syntactic type (e.g. `string` or `complex type`) and in the case of strings, an optional format (e.g. [ISO 8601 date time format](https://www.iso.org/iso-8601-date-and-time-format.html) [[3](#References)]).
 
 `A2007`: Senders MUST adhere to data type definitions contained in this document.
 
