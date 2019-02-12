@@ -67,7 +67,7 @@
           {
             "name": "tokenParameters",
             "in": "body",
-            "required": true,
+            "required": false,
             "schema": {
               "$ref": "#/definitions/TokenParameters"
             }
