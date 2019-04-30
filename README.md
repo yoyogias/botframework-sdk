@@ -22,7 +22,8 @@ Bot Builder provides the most comprehensive experience for building conversation
     - [Chatdown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Chatdown)
 - **Bot Framework webchat** (embeddable and customizable open source web chat control) 
     - [Available here](https://github.com/microsoft/botframework-webchat)
-
+- **Bot Framework Solutions** (Templates and Solutions - Virtual Assistant, Skills, etc.)
+    - [**Available here**](https://github.com/microsoft/ai)
 
 Please see [here](https://aka.ms/BotBuilderOverview) for an overview of the end-to-end bot development workflow. To get started, you can create a bot with [Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0). Click [here](https://account.azure.com/signup) if you need a trial Azure subscription. 
 
@@ -55,6 +56,7 @@ We track functional issues and features asks for and Bot Builder and Azure Bot S
 |CLI tools| MSBot, chatdown, ludown, LUIS, LUISGen, QnA Maker, dispatch  | [File an issue](https://github.com/microsoft/botbuilder-tools/issues)|
 |Emulator| Test and debug bots running locally or remote. | [File an issue](https://github.com/Microsoft/BotFramework-Emulator/issues)| 
 |Webchat | Embeddable web chat control for the Microsoft Bot Framework | [File an issue](https://github.com/Microsoft/BotBuilder/issues)|
+|Solutions and Template | Templates and Solutions - Virtual Assistant, skills, etc. | [File an issue](https://github.com/Microsoft/AI/issues)|
 |Azure Bot Service & Channels| Bot Framework portal within Microsoft Azure, and the connectivity channels Skype, Microsoft Teams, Direct Line, Cortana, Facebook Messenger, Web Chat, Slack, Telegram, etc. | [File an issue](https://github.com/Microsoft/BotFramework-Services/issues) |
 |SDK v3 (.NET and JS)| core bot runtime, abstractions, prompts, dialogs, FormFlow, etc. | [File an issue](https://github.com/Microsoft/BotBuilder-v3/issues) |
 
