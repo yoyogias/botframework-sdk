@@ -8,11 +8,11 @@ The Bot Framework SDK v4, part of the [Bot Framework](https://github.com/microso
 The Bot Framework SDK v4 is an [open source SDK][1a] that enable developers to model and build sophisticated conversation using their favorite programming language.
 
 
-|   | C#  | JS  | Python |  Java | 
-|---|:---:|:---:|:------:|:-----:|
-|Stable Release |[4.4.3][1] | [4.4.0][2] | [4.4.0b1 (preview)][3] | [4.0.0a6 (preview)][3a]|
-|Docs | [docs][5] |[docs][5] |  | |
-|Samples |[.NET Core][6], [WebAPI][10] |[Node.js][7] , [TypeScript][8], [es6][9]  | [Python][111] | | 
+| C#             |              JS              |                  Python                  |          Java          |                         |
+|----------------|:----------------------------:|:----------------------------------------:|:----------------------:|:-----------------------:|
+| Stable Release |          [4.4.3][1]          |                [4.4.0][2]                | [4.4.0b1 (preview)][3] | [4.0.0a6 (preview)][3a] |
+| Docs           |           [docs][5]          |                 [docs][5]                |                        |                         |
+| Samples        | [.NET Core][6], [WebAPI][10] | [Node.js][7] , [TypeScript][8], [es6][9] |      [Python][111]     |                         |
 
 [1a]:https://github.com/microsoft/botframework-sdk
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
@@ -50,13 +50,45 @@ The Bot Framework SDK v4 - Version 4.5 new capabilites in preview.
 [49]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/csharp_dotnetcore
 [50]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/declarative
 
+
+## Channels and Adapters
+There are two ways to connect your bot to a client experience:
+* **Azure Bot Service Channel** - Language and SDK independent support via Azure Bot Service
+* **Bot Framework SDK Adapter** -  A per language Adapter component written by community   
+
+| Client          | Azure Channel  | C# Adapter        | JS Adapter        |
+|-----------------|----------------|-------------------|-------------------|
+| Microsoft Teams | [Azure][55abs] |                   |                   |
+| Skype           | [Azure][55abs] |                   |                   |
+| Exchange        | [Azure][55abs] |                   |                   |
+| Direct Line     | [Azure][55abs] |                   |                   |
+| Web Chat        | [Azure][55abs] |                   | [Botkit][55bk]    |
+| Cortona         | [Azure][55abs] |                   |                   |
+| Facebook        | [Azure][55abs] |                   | [Botkit][55bk]    |
+| Slack           | [Azure][55abs] |                   | [Botkit][55bk]    |
+| Kik             | [Azure][55abs] |                   |                   |
+| Telegram        | [Azure][55abs] |                   |                   |
+| Line            | [Azure][55abs] |                   |                   |
+| GroupMe         | [Azure][55abs] |                   |                   |
+| Twilio (SMS)    | [Azure][55abs] |                   | [Botkit][55bk]    |
+| Alexa           |                | [Community][55cs] | [Community][55js] |
+| Google Home     |                | [Community][55cs] | [Community][55js] |
+| Google Hangouts |                | [Community][55cs] | [Botkit][55bk]    |
+| WebEx           |                |                   | [Botkit][55bk]    |
+| Console         |                |                   | [Community][55js] |
+
+[55abs]:https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0
+[55cs]:https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#adapters
+[55js]:https://github.com/BotBuilderCommunity/botbuilder-community-js#adapters
+[55bk]:https://github.com/BotBuilderCommunity/botbuilder-community-js#adapters
+
 ## Community Extensions
 Adapters and plugins from the open source community are available to extend your bot application.
 
-|   | C#  | JS  | Python |  Java | 
-|---|:---:|:---:|:------:|:-----:|
-| [botbuilder-community](https://github.com/botbuildercommunity) | [C#](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#readme) | [JS](https://github.com/BotBuilderCommunity/botbuilder-community-js#readme) | [Python](https://github.com/BotBuilderCommunity/botbuilder-community-python#readme)| [Java](https://github.com/BotBuilderCommunity/botbuilder-community-java#readme)
-| [Botkit](https://github.com/howdyai/botkit#readme)  | | [JS](https://github.com/howdyai/botkit#readme)  | |
+| C#                                                             |                                        JS                                       |                                    Python                                   |                                         Java                                        |                                                                                 |
+|----------------------------------------------------------------|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|
+| [botbuilder-community](https://github.com/botbuildercommunity) | [C#](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#readme) | [JS](https://github.com/BotBuilderCommunity/botbuilder-community-js#readme) | [Python](https://github.com/BotBuilderCommunity/botbuilder-community-python#readme) | [Java](https://github.com/BotBuilderCommunity/botbuilder-community-java#readme) |
+| [Botkit](https://github.com/howdyai/botkit#readme)             |                                                                                 |                [JS](https://github.com/howdyai/botkit#readme)               |                                                                                     |                                                                                 |
 
 ## Questions and Help 
 If you have questions about Bot Framework SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
@@ -71,12 +103,12 @@ See all the support options **[here](https://docs.microsoft.com/en-us/bot-framew
 ## Issues and feature requests 
 We track functional issues and features asks for and Bot Builder and Azure Bot Service in a variety of locations. If you have found an issue or have a feature request, please submit an issue to the below repositories.
 
-|Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Description|Link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|----|:-----|---------|
-|SDK v4 .NET| core bot runtime for .NET, connectors, middleware, dialogs, prompts, LUIS and QnA| [File an issue](https://github.com/Microsoft/botbuilder-dotnet/issues) |
-|SDK v4 JS| core bot runtime for Typescript/Javascript, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-js/issues) |
-|SDK v4 Python| core bot runtime for Python, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-python/issues) |
-|SDK v4 Java| core bot runtime for Java, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue]( https://github.com/Microsoft/botbuilder-java/issues)|
+| Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                                                        | Link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| SDK v4 .NET                                                                                                            | core bot runtime for .NET, connectors, middleware, dialogs, prompts, LUIS and QnA                  | [File an issue](https://github.com/Microsoft/botbuilder-dotnet/issues)                         |
+| SDK v4 JS                                                                                                              | core bot runtime for Typescript/Javascript, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-js/issues)                             |
+| SDK v4 Python                                                                                                          | core bot runtime for Python, connectors, middleware, dialogs, prompts, LUIS and QnA                | [File an issue](https://github.com/Microsoft/botbuilder-python/issues)                         |
+| SDK v4 Java                                                                                                            | core bot runtime for Java, connectors, middleware, dialogs, prompts, LUIS and QnA                  | [File an issue]( https://github.com/Microsoft/botbuilder-java/issues)                          |
 
 
 ## Prior releases
