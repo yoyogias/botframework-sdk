@@ -80,15 +80,22 @@ There are two ways to connect your bot to a client experience:
 [55abs]:https://docs.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0
 [55cs]:https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#adapters
 [55js]:https://github.com/BotBuilderCommunity/botbuilder-community-js#adapters
-[55bk]:https://github.com/BotBuilderCommunity/botbuilder-community-js#adapters
+[55bk]:https://github.com/howdyai/botkit#readme
 
 ## Community Extensions
 Adapters and plugins from the open source community are available to extend your bot application.
 
-| C#                                                             |                                        JS                                       |                                    Python                                   |                                         Java                                        |                                                                                 |
-|----------------------------------------------------------------|:-------------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|
-| [botbuilder-community](https://github.com/botbuildercommunity) | [C#](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#readme) | [JS](https://github.com/BotBuilderCommunity/botbuilder-community-js#readme) | [Python](https://github.com/BotBuilderCommunity/botbuilder-community-python#readme) | [Java](https://github.com/BotBuilderCommunity/botbuilder-community-java#readme) |
-| [Botkit](https://github.com/howdyai/botkit#readme)             |                                                                                 |                [JS](https://github.com/howdyai/botkit#readme)               |                                                                                     |                                                                                 |
+| C#                         |       JS       |   Python   |      Java      |              |
+|----------------------------|:--------------:|:----------:|:--------------:|:------------:|
+| [botbuilder-community][56] | [C#][56dotnet] | [JS][56js] | [Python][56py] | [Java][56ja] |
+| [Botkit][56bk]             |                | [JS][56bk] |                |              |
+
+[56]:https://github.com/botbuildercommunity#readme
+[56dotnet]:https://github.com/botbuildercommunity/botbuilder-community-dotnet#readme
+[56js]:https://github.com/botbuildercommunity/botbuilder-community-js#readme
+[56py]:https://github.com/botbuildercommunity/botbuilder-community-python#readme
+[56ja]:https://github.com/botbuildercommunity/botbuilder-community-java#readme
+[56bk]:https://github.com/howdyai/botkit#readme
 
 ## Questions and Help 
 If you have questions about Bot Framework SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
