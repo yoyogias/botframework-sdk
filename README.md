@@ -73,6 +73,7 @@ We track functional issues and features asks for and Bot Builder and Azure Bot S
 
 ## Prior releases
 - Bot Builder V3 SDK has been migrated to the [Bot Framework SDK v3](https://github.com/microsoft/botbuilder-v3) repository.
+- [BotKit SDK](http://botkit.ai) is a popular SDK which joined the Microsoft Bot Framework family and is built on top of the Bot Framework SDK V4.
 
 ## Contributing
 
