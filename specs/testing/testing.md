@@ -33,8 +33,8 @@ This document describes the different types of tests that can be used in a conve
 
 # Testing scenarios
 
-- For a list of the bot testing scenarios targeted to v4.5 see the DCRs posted under [4.5 Preview](https://github.com/Microsoft/BotBuilder/milestone/1).
-- For a complete list of testing scenarios see [Bot Testing Issues](https://github.com/Microsoft/BotBuilder/issues?q=is%3Aopen+is%3Aissue+project%3AMicrosoft%2FBotBuilder%2F11).
+- For a list of the bot testing scenarios targeted to v4.5 see the DCRs posted under [4.5 Preview](https://github.com/Microsoft/botframework-sdk/milestone/1).
+- For a complete list of testing scenarios see [Bot Testing Issues](https://github.com/Microsoft/botframework-sdk/issues?q=is%3Aopen+is%3Aissue+project%3AMicrosoft%2Fbotframework-sdk%2F11).
 
 **Note:** The testing DCRs use the format "As a ***role*** I would like to ***requirement*** so I can ***benefit***".
 
@@ -42,7 +42,7 @@ This document describes the different types of tests that can be used in a conve
 
 Our approach is to enhance our samples, documentation and tools to provide clear guidance on how to test bots. We will also extend the SDK with new features where needed to make things easier.
 
-You can see our roadmap and work in progress stories in the [Bot Testing](https://github.com/Microsoft/BotBuilder/projects/11?fullscreen=true) project.
+You can see our roadmap and work in progress stories in the [Bot Testing](https://github.com/Microsoft/botframework-sdk/projects/11?fullscreen=true) project.
 
 The **4.5 Candidates** column enumerates a prioritized list of the scenarios targeted for the 4.5 release.
 
