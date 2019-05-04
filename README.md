@@ -9,7 +9,7 @@ The Bot Framework SDK v4 includes SDKs that enable developers to model and build
 
 |   | C#  | JS  | Python |  Java | 
 |---|:---:|:---:|:------:|:-----:|
-|Stable Release |[4.3.2][1] | [4.3.4][2] | [4.0.0a6 (preview)][3] | [latest](https://github.com/Microsoft/botbuilder-java) |
+|Stable Release |[4.3.2][1] | [4.3.4][2] | [4.0.0a6 (preview)][3] | [4.0.0.a6 (preview)](https://github.com/Microsoft/botbuilder-java#packages) |
 |Docs | [docs][5] |[docs][5] | | |
 |Samples |[.NET Core][6], [WebAPI][10] |[Node.js][7] , [TypeScript][8], [es6][9]  | | | 
 
