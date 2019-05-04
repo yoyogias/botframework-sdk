@@ -50,6 +50,13 @@ The Bot Framework SDK v4 - Version 4.5 new capabilites in preview.
 [49]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/csharp_dotnetcore
 [50]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/declarative
 
+## Community Extensions
+Adapters and plugins from the open source community are available to extend your bot application.
+
+|   | C#  | JS  | Python |  Java | 
+|---|:---:|:---:|:------:|:-----:|
+| [botbuilder-community](https://github.com/botbuildercommunity) | [C#](https://github.com/BotBuilderCommunity/botbuilder-community-dotnet#readme) | [JS](https://github.com/BotBuilderCommunity/botbuilder-community-js#readme) | [Python](https://github.com/BotBuilderCommunity/botbuilder-community-python#readme)| [Java](https://github.com/BotBuilderCommunity/botbuilder-community-java#readme)
+| [Botkit](https://github.com/howdyai/botkit#readme)  | | [JS](https://github.com/howdyai/botkit#readme)  | |
 
 ## Questions and Help 
 If you have questions about Bot Framework SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
