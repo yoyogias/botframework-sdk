@@ -57,7 +57,7 @@ There are two ways to connect your bot to a client experience:
 * **Bot Framework SDK Adapter** -  A per language Adapter component written by community   
 
 | Client          | Azure Channel  | C# Adapter        | JS Adapter        |
-|-----------------|----------------|-------------------|-------------------|
+|-----------------|:--------------:|:-----------------:|:-----------------:|
 | Microsoft Teams | [Azure][55abs] |                   |                   |
 | Skype           | [Azure][55abs] |                   |                   |
 | Exchange        | [Azure][55abs] |                   |                   |
@@ -85,7 +85,7 @@ There are two ways to connect your bot to a client experience:
 ## Community Extensions
 Adapters and plugins from the open source community are available to extend your bot application.
 
-| C#                         |       JS       |   Python   |      Java      |              |
+|                            |       C#       |   JS       |    Python      |    Java      |
 |----------------------------|:--------------:|:----------:|:--------------:|:------------:|
 | [botbuilder-community][56] | [C#][56dotnet] | [JS][56js] | [Python][56py] | [Java][56ja] |
 | [Botkit][56bk]             |                | [JS][56bk] |                |              |
