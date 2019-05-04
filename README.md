@@ -1,78 +1,79 @@
-# Bot Builder 
+# ![Bot Framework SDK](./docs/media/FrameWorkSDK.png)
 
-Bot Builder is comprised of SDK and tools that enable you to build and connect intelligent bots that interact naturally wherever your users are talking, from text/sms to Skype, Slack, Office 365 mail and other popular services. You can build bots that converse free-form or your bot can also have more guided interactions where it provides the user choices or possible actions. The conversation can use simple text or more complex rich cards that contain text, images, and action buttons. You can add natural language interactions and questions and answers, which let your users interact with your bots in a natural way.
+# Bot Framework SDK 
 
-Bot Builder provides the most comprehensive experience for building conversation applications and includes the following SDKs and tools:
+The Bot Framework SDK v4, part of the [Bot Framework](https://github.com/microsoft/botframework), provides the most comprehensive experience for building conversation applications. With the Bot Framework SDK, developers can easily model and build sophisticated conversation using their favorite programming languages. With the Bot Framework SDK, you can build bots that converse free-form or your bot can also have more guided interactions where it provides the user choices or possible actions. The conversation can use simple text or more complex rich cards that contain text, images, and action buttons. You can add natural language interactions and questions and answers, which let your users interact with your bots in a natural way.
 
-- **Bot Builder V4 SDK**
-    - [**C#** (stable release)](https://github.com/microsoft/botbuilder-dotnet)
-    - [**JS** (stable release)](https://github.com/microsoft/botbuilder-js)
-    - [**Java** (preview release)](https://github.com/microsoft/botbuilder-java)
-    - [**Python** (preview release)](https://github.com/microsoft/botbuilder-python).
-- **Bot Framework Emulator** (local debugging and visualization of conversations)
-    - [Bot Framework **V4 Emulator**](https://github.com/microsoft/botframework-emulator).
-- **Bot Builder CLI tools** (streamlined development, provisioning, and deployment)
-    - [MSBot CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/MSBot)
-    - [AZ Bot CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-    - [Dispatch CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
-    - [LUIS CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS)
-    - [Ludown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Ludown)
-    - [LuisGen CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUISGen)
-    - [QnAMaker CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/QnAMaker)
-    - [Chatdown CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Chatdown)
-- **Bot Framework webchat** (embeddable and customizable open source web chat control) 
-    - [Available here](https://github.com/microsoft/botframework-webchat)
+## Bot Framework SDK v4
+The Bot Framework SDK v4 includes SDKs that enable developers to model and build sophisticated conversation using their favorite programming language.
+
+|   | C#  | JS  | Python |  Java | 
+|---|:---:|:---:|:------:|:-----:|
+|Stable Release |[4.3.2][1] | [4.3.4][2] | [4.0.0a6 (preview)][3] | [latest](https://github.com/Microsoft/botbuilder-java) |
+|Docs | [docs][5] |[docs][5] | | |
+|Samples |[.NET Core][6], [WebAPI][10] |[Node.js][7] , [TypeScript][8], [es6][9]  | | | 
+
+[1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
+[2]:https://github.com/Microsoft/botbuilder-js#packages
+[3]:https://github.com/Microsoft/botbuilder-python#packages
+[4]:https://github.com/Microsoft/botbuilder-java#packages
+[5]:https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0
+[6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
+[7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
+[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_typescript
+[9]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_es6
+[10]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi
+
+### Bot Framework SDK v4 - (New! - version 4.5 preview)
+The Bot Framework SDK v4 - Version 4.5 new capabilites in preview. 
+
+- [Adaptive Dialog][47] | [docs][48] | [C# samples][49] :: The new **Adaptive dialog** and the event model simplify sophisticated conversation modelling primitives, eliminate much of the boiler plate code and helps you **focus on the model of the conversation** rather than the mechanics of conversation and dialog management. This new way to model conversations that takes the best of waterfall dialogs and prompts and simplifies sophisticated conversation modelling primitives like building a dialog dispatcher and ability to handle interruptions elegantly.  Adaptive dialog, ground up is built to be [declaratively configurable][50].
+
+- [Language Generation][43] | [docs][44] | [C# samples][45] :: Language generation is the umbrella term for generating appropriate output to the user. In some sense, language generation is reverse of language understanding. While language understanding goes from user input to extracting meaningful information such as intent and entities, language generation helps construct meaningful, variable and grammatically correct responses that a bot can send back to the user.
+
+- [Common Expression Language][40] | [api][41] :: Both Adaptive dialogs and Language Generation rely on and use a common expression language to power bot conversations.
 
 
-Please see [here](https://aka.ms/BotBuilderOverview) for an overview of the end-to-end bot development workflow. To get started, you can create a bot with [Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0). Click [here](https://account.azure.com/signup) if you need a trial Azure subscription. 
+[40]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/common-expression-language
+[41]:https://github.com/Microsoft/BotBuilder-Samples/blob/master/experimental/common-expression-language/api-reference.md
+[43]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/language-generation
+[44]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/language-generation/docs
+[45]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/language-generation/csharp_dotnetcore
+[46]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/language-generation/javascript_nodejs/13.core-bot
+[47]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog
+[48]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/docs
+[49]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/csharp_dotnetcore
+[50]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/declarative
 
-## Documentation
-Visit azure.com for the primary [Azure Bot Service documentation page](https://docs.microsoft.com/en-us/azure/bot-service/) to learn about building bots using Bot Builder. There is additional documentation on the SDK, oriented towards contributors. The SDK currently supports four programming language: 
-- [.NET](https://github.com/Microsoft/botbuilder-dotnet/wiki)
-- [JavaScript](https://github.com/microsoft/botbuilder-js/wiki)
-- [Python](https://github.com/Microsoft/botbuilder-python/wiki)
-- [Java](https://github.com/Microsoft/botbuilder-java/wiki)
-
-## Samples
-A rich set of samples are available at the [BotBuilder-Samples](https://github.com/microsoft/botbuilder-samples) repository.
 
 ## Questions and Help 
-If you have questions about Bot Builder SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
-- For questions which fit the Stack Overflow format ("how does this work?"), we monitor the both [Azure-bot-service](https://stackoverflow.com/questions/tagged/azure-bot-service) and [bot framework](https://stackoverflow.com/questions/tagged/botframework) tags (search [both](https://stackoverflow.com/questions/tagged/azure-bot-service+or+botframework))
+If you have questions about Bot Framework SDK or using Azure Bot Service, we encourage you to reach out to the community and Azure Bot Service dev team for help.
+- For questions which fit the Stack Overflow format ("how does this work?"), we monitor the both [Azure Bot Service](https://stackoverflow.com/questions/tagged/azure-bot-service) and [Bot Framework](https://stackoverflow.com/questions/tagged/botframework) tags (search [both](https://stackoverflow.com/questions/tagged/azure-bot-service+or+botframework))
 - You can also tweet/follow [@msbotframework](https://twitter.com/msbotframework) 
-
-While we do our best to help out on a timely basis, we don't have any promise around the above resources. If you need an SLA on support from us, it's recommended you invest in an [Azure Support plan](https://azure.microsoft.com/en-us/support/options/).
-
-## Issues and feature requests 
-We track functional issues and features asks for and Bot Builder and Azure Bot Service in a variety of locations. If you have found an issue or have a feature request, please submit an issue to the below repositories.
-
-|Item|Description|Link|
-|----|-----|-----|
-|SDK v4 .net| core bot runtime for .NET, connectors, middleware, dialogs, prompts, LUIS and QnA| [File an issue](https://github.com/Microsoft/botbuilder-dotnet/issues) |
-|SDK v4 JavaScript| core bot runtime for JavaScript, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-js/issues) |
-|SDK v4 Python| core bot runtime for Python, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-python/issues) |
-|SDK v4 Java| core bot runtime for Java, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue]( https://github.com/Microsoft/botbuilder-java/issues)|
-|CLI tools| MSBot, chatdown, ludown, LUIS, LUISGen, QnA Maker, dispatch  | [File an issue](https://github.com/microsoft/botbuilder-tools/issues)|
-|Emulator| Test and debug bots running locally or remote. | [File an issue](https://github.com/Microsoft/BotFramework-Emulator/issues)| 
-|Webchat | Embeddable web chat control for the Microsoft Bot Framework | [File an issue](https://github.com/Microsoft/BotBuilder/issues)|
-|Azure Bot Service & Channels| Bot Framework portal within Microsoft Azure, and the connectivity channels Skype, Microsoft Teams, Direct Line, Cortana, Facebook Messenger, Web Chat, Slack, Telegram, etc. | [File an issue](https://github.com/Microsoft/BotFramework-Services/issues) |
-|SDK v3 (.NET and JS)| core bot runtime, abstractions, prompts, dialogs, FormFlow, etc. | [File an issue](https://github.com/Microsoft/BotBuilder-v3/issues) |
 
 Join the conversation on **[Gitter](https://gitter.im/Microsoft/BotBuilder)**.
 
 See all the support options **[here](https://docs.microsoft.com/en-us/bot-framework/resources-support)**.
 
-## Adding intelligence to your bot
-With the power of [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/), your bots can interact with your customers in more human ways. The following are common services that bots utilize: 
-- [LUIS](https://www.luis.ai)
-- [QnA Maker](https://www.qnamaker.ai/)
-- [Speech](https://azure.microsoft.com/services/cognitive-services/directory/speech/)
+
+## Issues and feature requests 
+We track functional issues and features asks for and Bot Builder and Azure Bot Service in a variety of locations. If you have found an issue or have a feature request, please submit an issue to the below repositories.
+
+|Item|Description|Link|
+|----|:-----|---------|
+|SDK v4 .net| core bot runtime for .NET, connectors, middleware, dialogs, prompts, LUIS and QnA| [File an issue](https://github.com/Microsoft/botbuilder-dotnet/issues) |
+|SDK v4 JavaScript| core bot runtime for JavaScript, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-js/issues) |
+|SDK v4 Python| core bot runtime for Python, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue](https://github.com/Microsoft/botbuilder-python/issues) |
+|SDK v4 Java| core bot runtime for Java, connectors, middleware, dialogs, prompts, LUIS and QnA | [File an issue]( https://github.com/Microsoft/botbuilder-java/issues)|
+
 
 ## Prior releases
-- Bot Builder V3 SDK 
-    - Has been migrated to the [BotBuilder-V3](https://github.com/microsoft/botbuilder-v3) repository.
-- Bot Framework Emulator 
-    - [Bot Framework **V3 Emulator** (stable release)](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36)
+
+- Bot Builder v3 SDK has been migrated to the [Bot Framework SDK V3](https://github.com/microsoft/botbuilder-v3) repository.
+
+
+## Prior releases
+- Bot Builder V3 SDK has been migrated to the [Bot Framework SDK v3](https://github.com/microsoft/botbuilder-v3) repository.
 
 ## Contributing
 
