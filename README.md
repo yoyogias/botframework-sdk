@@ -11,7 +11,7 @@ The Bot Framework SDK v4 includes SDKs that enable developers to model and build
 |---|:---:|:---:|:------:|:-----:|
 |Stable Release |[4.4.3][1] | [4.4.0][2] | [4.4.0b1 (preview 2)][3] | [4.0.0.a6 (preview)](https://github.com/Microsoft/botbuilder-java#packages) |
 |Docs | [docs][5] |[docs][5] | | |
-|Samples |[.NET Core][6], [WebAPI][10] |[JavaScript.js][7] , [TypeScript][8], [es6][9]  | | | 
+|Samples |[.NET Core][6], [WebAPI][10] |[JavaScript][7] , [TypeScript][8], [es6][9]  | | | 
 
 [1]:https://github.com/Microsoft/botbuilder-dotnet/#packages
 [2]:https://github.com/Microsoft/botbuilder-js#packages
@@ -20,7 +20,7 @@ The Bot Framework SDK v4 includes SDKs that enable developers to model and build
 [5]:https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0
 [6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
 [7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
-[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_typescript
+[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/typescript_nodejs
 [9]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_es6
 [10]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi
 
