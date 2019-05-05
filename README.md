@@ -1,5 +1,7 @@
 # ![Bot Framework SDK](./docs/media/FrameWorkSDK.png)
 
+### [Click here to find out what's new for //build2019!](https://github.com/Microsoft/botframework/blob/master/whats-new.md#whats-new)
+
 # Bot Framework SDK 
 
 The Bot Framework SDK v4, part of the [Bot Framework](https://github.com/microsoft/botframework), provides the most comprehensive experience for building conversation applications. With the Bot Framework SDK, developers can easily model and build sophisticated conversation using their favorite programming languages. With the Bot Framework SDK, you can build bots that converse free-form or your bot can also have more guided interactions where it provides the user choices or possible actions. The conversation can use simple text or more complex rich cards that contain text, images, and action buttons. You can add natural language interactions and questions and answers, which let your users interact with your bots in a natural way.
@@ -23,7 +25,7 @@ The Bot Framework SDK v4 is an [open source SDK][1a] that enable developers to m
 [5]:https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0
 [6]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore
 [7]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs
-[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_typescript
+[8]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/typescript_nodejs
 [9]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/javascript_es6
 [10]:https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_webapi
 [111]:https://github.com/Microsoft/botbuilder-python/tree/master/samples
