@@ -15,3 +15,7 @@
 
 bones/
 .vs/
+
+# Add python virtual environments
+venv/
+env/
