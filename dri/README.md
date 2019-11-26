@@ -30,9 +30,14 @@ This tool uses a personal access token to authenticate with Github.
   - Copy the token value (don't worry you can regen if you forget it)
  - On command line:
           Windows: `set GIT_PERSONAL_TOKEN=<your token>`
+
           Powershell: `$env:GIT_PERSONAL_TOKEN="<your token>"` (Note the quotes)
+
           Linux: `export GIT_PERSONAL_TOKEN=<your token>`
- - To permanently set into your environment variables in Windows: `setx GIT_PERSONAL_TOKEN <your token>`
+
+ - To permanently set into your environment variables in Windows:
+
+          `setx GIT_PERSONAL_TOKEN <your token>`
 
 ### Run
 ```bash
@@ -61,5 +66,10 @@ Repo: microsoft/BotFramework-Composer:
 ```
 
 
+### Care and feeding
+
+To filter out people (ie, consultants) which aren't subject to monitoring, edit the `report.py` and add the github alias (all lowercase) to the `MICROSOFT_EMPLOYEES` list.
+
+To add new milestones labels (issues with milestone labels are filtered out), edit the `helpers.py` file and add the milestone label to `MILESTONE_LABELS` list.
 
 Enjoy!
