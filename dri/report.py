@@ -97,7 +97,6 @@ MICROSFT_EMPLOYEES = [
     'scheyal',
     'sgellock',
     'shikhamishra11',
-    'scheyal',
     'stevengum',
     'stevenic',
     'stevkan',
