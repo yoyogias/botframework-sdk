@@ -98,6 +98,7 @@ MICROSFT_EMPLOYEES = [
     'shikhamishra11',
     'stevengum',
     'stevenic',
+    'stevkan',
     'tomlm',
     'tracyboehrer',
     'virtual-josh',
