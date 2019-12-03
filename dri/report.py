@@ -78,6 +78,7 @@ MICROSFT_EMPLOYEES = [
     'bill7zz',
     'carlosscastro',
     'chrimc62',
+    'cwhitten',
     'cleemullins',
     'dandriscoll',
     'ericdahlvang',
