@@ -82,6 +82,10 @@ MICROSFT_EMPLOYEES = [
     'washingtonkayaker',
     'yochay', # Not a MSFT employee anymore, but still owner of lots of issues. Adding here until they are cleaned up.
     'ryanlengel',
+    'zerryth',
+    'stevekan',
+    'diberry',
+    'anusharavindrar',
 ]
 
 # When to begin searching for issues.
