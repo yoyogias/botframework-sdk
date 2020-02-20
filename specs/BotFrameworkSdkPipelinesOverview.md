@@ -1,5 +1,5 @@
 # Bot Framework SDK Product Pipelines Overview
-Pipelines for building and releasing Bot Framework SDK products are found in the [SDK_v4 project](https://fuselabs.visualstudio.com/SDK_v4/_build?view=folders) (which is Microsoft internal viewable only) or the [SDK_Public project](https://fuselabs.visualstudio.com/SDK_Public/_build?view=folders) (which is public facing) on the [Azure FuseLabs web site](https://fuselabs.visualstudio.com/).
+Pipelines for building and releasing Bot Framework SDK products are found on the [Azure FuseLabs web site](https://fuselabs.visualstudio.com/) in two projects: in the [SDK_v4 project](https://fuselabs.visualstudio.com/SDK_v4/_build?view=folders) which is Microsoft internal viewable only, and in the [SDK_Public project](https://fuselabs.visualstudio.com/SDK_Public/_build?view=folders) which is public facing.
 
 For a list of pipelines see the [Bot Framework SDK Pipelines List](SdkPipelinesList.md) document.
 
@@ -7,11 +7,15 @@ Packages are built and tested using Build pipelines [here](https://fuselabs.visu
 
 Packages are published and released using Release pipelines [here](https://fuselabs.visualstudio.com/SDK_v4/_release?_a=releases&view=all&path=%5C) and [here](https://fuselabs.visualstudio.com/SDK_Public/_release?_a=releases&view=all&path=%5C)
 
+Preview versions from the nightly builds are automatically published to [MyGet](https://botbuilder.myget.org/gallery).
+
 ## AI
 
 **[AI daily pipelines for DotNet and for JS](https://fuselabs.visualstudio.com/SDK_v4/_build?_a=allDefinitions&path=%5CAI%5C&treeState=XEFJ)** are scheduled to run once a night.
 
 AI does not have continuous integration or pull request validation pipelines.
+
+Pipelines for pushing to MyGet, NuGet and npmjs are [here](https://fuselabs.visualstudio.com/SDK_v4/_release?_a=releases&view=all&path=%5CAI).
 
 Source repo: [https://github.com/microsoft/botframework-solutions](https://github.com/microsoft/botframework-solutions)
 
