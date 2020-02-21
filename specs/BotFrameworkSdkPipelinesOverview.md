@@ -13,11 +13,19 @@ Preview versions from the nightly builds are automatically published to [MyGet](
 
 **[AI daily pipelines for DotNet and for JS](https://fuselabs.visualstudio.com/SDK_v4/_build?_a=allDefinitions&path=%5CAI%5C&treeState=XEFJ)** are scheduled to run once a night.
 
-AI does not have continuous integration or pull request validation pipelines.
+AI does not have continuous integration (CI) or pull request validation (PR) pipelines.
 
 Pipelines for pushing to MyGet, NuGet and npmjs are [here](https://fuselabs.visualstudio.com/SDK_v4/_release?_a=releases&view=all&path=%5CAI).
 
 Source repo: [https://github.com/microsoft/botframework-solutions](https://github.com/microsoft/botframework-solutions)
+
+## CLI
+
+CI builds for CLI are [here](https://fuselabs.visualstudio.com/SDK_Public/_build?definitionScope=%5Ccli).
+
+Pipelines for pushing to MyGet and npmjs are [here](https://fuselabs.visualstudio.com/SDK_Public/_release?_a=releases&view=all&path=%5Ccli).
+
+Source repo: [https://github.com/microsoft/botframework-cli](https://github.com/microsoft/botframework-cli)
 
 ## DotNet (C#)
 
@@ -82,7 +90,7 @@ Source repos:
 
 ## WeChat
 
-Daily and CI builds for WeChat are [here](https://fuselabs.visualstudio.com/SDK_v4/_build?definitionScope=%5CWeChat).
+Daily and CI builds for WeChat are [here](https://fuselabs.visualstudio.com/SDK_v4/_build?definitionScope=%5CWeChat). Public CI builds are [here](https://fuselabs.visualstudio.com/SDK_Public/_build?definitionScope=%5Cwechat).
 
 Pipelines for pushing to MyGet are [here](https://fuselabs.visualstudio.com/SDK_v4/_release?_a=releases&view=all&path=%5CWeChat).
 
