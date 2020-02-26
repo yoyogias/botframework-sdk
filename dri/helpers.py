@@ -27,6 +27,8 @@ MILESTONE_LABELS = [
     '4.8',
     'R7',
     'R8',
+    'R9',
+    'R10',
     'Backlog',
 ]
 
