@@ -3,7 +3,7 @@
 This section contains diagrams that illustrate the participants involved when Activities flows between Channel and Bot.
 
 - [HTTP Protocol](#http-protocol)
-- Detailed Look into the SDK
+- [Detailed Look into the SDK](#detailed-look-into-the-sdk)
 - Activity Flow Participants
 
 # *HTTP Protocol*
@@ -82,3 +82,19 @@ Many channels, however, such as for Alexa, Google, etc., actually follow a diffe
 ![AlexaAdapter](./CustomAdapterFlow/BufferingWithCustomAdapter.svg)
 
 Above Alexa channel makes a request to the bot, hitting the custom adapter layer between. The custom adapter and bot buffer the response to the Alexa reuqest until X occurs, when the Bot's reply is ready to be sent with in the HTTP response.
+
+___
+
+# *Detailed look into the SDK*
+
+### *Modeled after the C# EchoBot example code in ['How bots work'](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0&tabs=csharp#bot-logic) documentation.*
+
+This diagram models the flow of an Activity going from Channel to Bot, then back out from Bot to Channel in response, with a high focus on the pieces of the Bot Framework SDK that are involved.
+
+![Activity Flow Diagram](./DetailedSdkFlow/DetailedSdkFlow.svg "Generalized Activity Flow")
+
+1. Bots are essentially websites that are hosted in a Web App exposed over HTTP.
+    - For example, your bot receives POST requests to its `"api/messages"` endpoint.
+
+2. Calls from Bot to the Bot Framework Service are industry-standard REST API calls with JSON over HTTPS. See [Communication between a Channel and a Bot using the BotFrameworkAdapter](https://github.com/Zerryth/Mermaid/tree/master/MarkdownFiles/ActivityFlow#communication-between-a-channel-and-a-bot-thats-using-botframeworkadapter) and [Communication between Bot Framework Service and Bot](https://github.com/Zerryth/Mermaid/tree/master/MarkdownFiles/ActivityFlow#details-of-communication-between-bot-framework-service-and-bot) for more details.
+    - For example, to Reply to Activity the Bot's Connector will `POST v3/conversations/{conversationId}/activities/{activityId}`.
