@@ -4,7 +4,7 @@ This section contains diagrams that illustrate the participants involved when Ac
 
 - [HTTP Protocol](#http-protocol)
 - [Detailed Look into the SDK](#detailed-look-into-the-sdk)
-- Activity Flow Participants
+- [Activity Flow Participants](#activity-flow-participants)
 
 # *HTTP Protocol*
 - [`BotFrameworkAdapter` vs. Custom Adapter](#botframeworkadapter-vs-custom-adapter)
@@ -98,3 +98,10 @@ This diagram models the flow of an Activity going from Channel to Bot, then back
 
 2. Calls from Bot to the Bot Framework Service are industry-standard REST API calls with JSON over HTTPS. See [Communication between a Channel and a Bot using the BotFrameworkAdapter](https://github.com/Zerryth/Mermaid/tree/master/MarkdownFiles/ActivityFlow#communication-between-a-channel-and-a-bot-thats-using-botframeworkadapter) and [Communication between Bot Framework Service and Bot](https://github.com/Zerryth/Mermaid/tree/master/MarkdownFiles/ActivityFlow#details-of-communication-between-bot-framework-service-and-bot) for more details.
     - For example, to Reply to Activity the Bot's Connector will `POST v3/conversations/{conversationId}/activities/{activityId}`.
+
+___
+
+# *Activity Flow Participants*
+Block diagram of the participants involved in a general Activity flow.
+
+![Higher Level Activity Flow Participants](./ParticipantsInActivityFlow.png "Higher Level Activity Flow Participants")
