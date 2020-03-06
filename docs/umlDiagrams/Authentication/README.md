@@ -61,6 +61,7 @@ Contains diagrams of adding authentication to your bot as described by examples 
 *Click to view diagrams of the following articles:*
 - *[Authentication](#example-scenario-described-in-authentication-docs)*
 - *[Add authentciation to your bot via Azure Bot Service]()*
+___
 
 ### **Example scenario described in [Authentication](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) docs**
 
@@ -72,9 +73,24 @@ Illustrating example in [Authentication docs](https://docs.microsoft.com/en-us/a
 
 ![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
 
-It's helpful to preview the architecture in [this block diagram](../ActivityFlow/README.md#activity-flow-participants) of participants in the flow of an activity and in the [Authenctication doc](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) example before diving into the detailed "OAuth dance" in the detailed sequence diagram following.
+It's helpful to preview the architecture in [this block diagram](../ActivityFlow/README.md#activity-flow-participants) of participants in the flow of an activity and in the [Authenctication doc](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) example before diving into the detailed "OAuth dance" in the sequence diagram following.
 
+#### Detailed View
 
+**OAuth Flow - no access token stored in Token Service's Token Storage yet**
+
+![Authentication Doc Example - No Token in Storage](./AddingAuthenticationToYourBot/AuthenticationDocExample_OAuthFlow_NoTokenToStart.svg "AuthenticationDocExample - OAuth Flow - No Token in Storage Yet")
+
+1. Authorization Server (AS).
+    * The AS can be within Azure, such as using AAD as our token provider, or outside of Azure as well, like in the case of using GitHub as the AS.
+2. There are many different authorization grants, or OAuth flows, that detail how exactly how to use the identity of the owner of the protected resource in exchange for an access token (e.g. authorization code, client credentials, device code, refresh token, implicit, etc.)
+
+**OAuth Flow - access token already stored in Token Service's Token Storage**
+
+![Authentication Doc Example - Token in Storage Already](./AddingAuthenticationToYourBot/AuthenticationDocExample_OAuthFlow_HasTokenInStorage.svg "AuthenticationDocExample - OAuth Flow - Token in Storage Already")
+
+___
+### **Example scenario described in [Add authentication to your bot via Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp)**
 ___
 
 ## Authentication within the SDK
