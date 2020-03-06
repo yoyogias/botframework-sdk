@@ -45,20 +45,35 @@ When a user wants the bot to access the protected resource, the bot sends the us
 
 ![Authorization Server Issues Token to Authorized Bot](./HighLevelAuthFlow/AuthServerIssuesTokenToBot.svg "Auth Server issues Token to Bot")
 
+
 **High Level View of OAuth Flow in Bot Framework**
 
 Sequence diagram of the authentication and authorization flow that takes place when a user asks a bot to send an email on their behalf.
 
 ![High Level View Of OAuth Flow In BotFramework](./HighLevelAuthFlow/HighLevelAuthFlowSequenceDiagram.svg)
 
+For more information on foundational OAuth concepts, see [Azure Active Directory V2 Protocols documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols).
 ___
 
 ## Adding Authentication to Your Bot
-Contains diagrams of adding authentication as described by examples in Bot Framework documentation.
+Contains diagrams of adding authentication to your bot as described by examples in BF documentation.
 
-Click to view diagrams of the following articles
-- *[Authentication]()*
+*Click to view diagrams of the following articles:*
+- *[Authentication](#example-scenario-described-in-authentication-docs)*
 - *[Add authentciation to your bot via Azure Bot Service]()*
+
+### **Example scenario described in [Authentication](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) docs**
+
+Illustrating example in [Authentication docs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0#about-the-bot-framework-token-service), deep diving into the details of OAuth flow with the user, Bot Framework Token Service and the bot.
+
+> "For example, a bot that can check a user's recent emails, using the Microsoft Graph API, will require an Azure Active Directory user token. At design time, the bot developer would register an Azure Active Directory application with the Bot Framework Token Service (via the Azure Portal), and then configure an OAuth connection setting (named `GraphConnection`) for the bot."
+
+#### Goal
+
+![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
+
+It's helpful to preview the architecture in [this block diagram](../ActivityFlow/README.md#activity-flow-participants) of participants in the flow of an activity and in the [Authenctication doc](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) example before diving into the detailed "OAuth dance" in the detailed sequence diagram following.
+
 
 ___
 
