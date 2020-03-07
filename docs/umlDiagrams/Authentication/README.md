@@ -3,8 +3,7 @@ How authentication is integrated into the Bot Framework.
 
 - [High Level Authorization Flow](#high-level-authorization-flow)
 - [Adding Authentication to Your Bot](#adding-authentication-to-your-bot)
-- [Authentication within the SDK](#authentication-within-the-sdk)
-- [OAuthPrompt Flow Charts](#oauthprompt-flow-charts)
+- [`OAuthPrompt`](#oauthprompt-flow-charts)
 - [Architecture of Authentication in Bot Framework](#architecture-of-authentication-in-bot-framework)
 
 ___
@@ -106,15 +105,42 @@ This section diagrams the concepts introduced in the [Add authentication to your
 
 **Detailed View**
 
-!["Detailed View - Add authentication to your bot via Azure Bot Service"](./AddingAuthenticationToYourBot/AddAuthenticationToYourBotViaABS/HigherLevel.svg "Detailed View - Add authentication to your bot via Azure Bot Service")
+!["Detailed View - Add authentication to your bot via Azure Bot Service"](./AddingAuthenticationToYourBot/AddAuthenticationToYourBotViaABS/DetailedView.svg "Detailed View - Add authentication to your bot via Azure Bot Service")
+
+* *Created automatically when creating a Web App Bot in Azure Portal
+* ** Auth Server can be AAD, GitHub, Uber, FB, etc. 
+    * Auth Server simply must be a provider that the Protected Resource trusts and can consume Tokens issued from
+
 ___
 
-## Authentication within the SDK
+## `OAuthPrompt`
 
-___
+- In order to access a **protected resource**, the **bot** must send the **user** to the **authorization server** or identity provider (in our samples we use AAD)
+- Once user is at AAD, the user must:
+    - Authenticate their identity (they are who they say they are)
+    - Authorize the bot to access the protected resource on the user's behalf (delegating limited power, not the user's entire power, in the form of approving certain scopes)
+        - In the process of designing the bot, you already specified *what scopes (permissions)* the bot would need to perform whatever function that bot was built to do, which are the scopes that the user is prompted to authorize
+        - See [Add authentication to your bot via Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp) for more detail on scopes
+- Once authenticated and authorized, AAD sends the bot the token needed to access the protected resource
 
-## `OAuthPrompt` Flow Charts
+Bot Framework's `OAuthPrompt` provides a way to send the User to AAD in order to obtain a token. Bot developers do not have to manage token lifecycles, storage, nor proper redirects in the OAuth flow.
 
+#### `OAuthPrompt.BeginDialogAsync()` Flow
+
+![OAuthPromptBeginDialogFlow](./OAuthPrompt/OAuthPrompt_BeginDialog.svg "OAuthPrompt.BeginDialogFlow()")
+
+#### `OAuthPrompt.ContinueDialogAsync()` Flow
+
+*Higher Level*
+
+![HigherLevelOAuthPromptContinueDialogFlow](./OAuthPrompt/OAuthPrompt_ContinueDialog_HigherLevel.svg "Higher Level OAuthPrompt.ContinueDialogFlow()")
+
+*Detailed View*
+<details>
+    <summary>Click to see Detailed View of `OAuthPrompt.ContinueDialog` Method</summary>
+
+![DetailedViewOAuthPromptContinueDialogFlow](./OAuthPrompt/OAuthPrompt_ContinueDialog_DetailedView.svg "Detailed View OAuthPrompt.ContinueDialogFlow()")
+</details>
 ___
 
 ## Architecture of Authentication in Bot Framework
