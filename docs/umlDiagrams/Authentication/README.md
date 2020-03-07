@@ -55,7 +55,7 @@ Sequence diagram of the authentication and authorization flow that takes place w
 For more information on foundational OAuth concepts, see [Azure Active Directory V2 Protocols documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols).
 ___
 
-## Adding Authentication to Your Bot
+## **Adding Authentication to Your Bot**
 Contains diagrams of adding authentication to your bot as described by examples in BF documentation.
 
 *Click to view diagrams of the following articles:*
@@ -71,7 +71,7 @@ Illustrating example in [Authentication docs](https://docs.microsoft.com/en-us/a
 
 #### Goal
 
-![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
+![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
 
 It's helpful to preview the architecture in [this block diagram](../ActivityFlow/README.md#activity-flow-participants) of participants in the flow of an activity and in the [Authenctication doc](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) example before diving into the detailed "OAuth dance" in the sequence diagram following.
 
@@ -79,7 +79,7 @@ It's helpful to preview the architecture in [this block diagram](../ActivityFlow
 
 **OAuth Flow - no access token stored in Token Service's Token Storage yet**
 
-![Authentication Doc Example - No Token in Storage](./AddingAuthenticationToYourBot/AuthenticationDocExample_OAuthFlow_NoTokenToStart.svg "AuthenticationDocExample - OAuth Flow - No Token in Storage Yet")
+![Authentication Doc Example - No Token in Storage](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_OAuthFlow_NoTokenToStart.svg "AuthenticationDocExample - OAuth Flow - No Token in Storage Yet")
 
 1. Authorization Server (AS).
     * The AS can be within Azure, such as using AAD as our token provider, or outside of Azure as well, like in the case of using GitHub as the AS.
@@ -87,10 +87,26 @@ It's helpful to preview the architecture in [this block diagram](../ActivityFlow
 
 **OAuth Flow - access token already stored in Token Service's Token Storage**
 
-![Authentication Doc Example - Token in Storage Already](./AddingAuthenticationToYourBot/AuthenticationDocExample_OAuthFlow_HasTokenInStorage.svg "AuthenticationDocExample - OAuth Flow - Token in Storage Already")
+![Authentication Doc Example - Token in Storage Already](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_OAuthFlow_HasTokenInStorage.svg "AuthenticationDocExample - OAuth Flow - Token in Storage Already")
 
 ___
 ### **Example scenario described in [Add authentication to your bot via Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp)**
+
+This section diagrams the concepts introduced in the [Add authentication to your bot via Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp), which is linked in our [authentication samples](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples)' READMEs. 
+
+**Higher Level**
+
+![Higher Level - Add authentication to your bot via Azure Bot Service](./AddingAuthenticationToYourBot/AddAuthenticationToYourBotViaABS/HigherLevel.svg "Higher Level - Add authentication to your bot via Azure Bot Service")
+
+* AAD is an Identity Provider, used as the authorization server to which:
+    * User authenticates their identity to, and authorizes bot to act on their behalf
+    * If authenticated, then auth server provides the bot with an access token
+* Protected Resource separately sepcifies which auth servers it trusts to issue Tokens
+* Bot can use the token obtained from auth server in its requests to access the protected resource's APIs
+
+**Detailed View**
+
+!["Detailed View - Add authentication to your bot via Azure Bot Service"](./AddingAuthenticationToYourBot/AddAuthenticationToYourBotViaABS/HigherLevel.svg "Detailed View - Add authentication to your bot via Azure Bot Service")
 ___
 
 ## Authentication within the SDK
