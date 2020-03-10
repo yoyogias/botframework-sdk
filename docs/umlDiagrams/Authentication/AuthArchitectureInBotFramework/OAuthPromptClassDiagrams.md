@@ -60,6 +60,39 @@ On `TurnContext` Initialization
         OAuthClient -- to use --> UserToken -- to get --> Token
 ```
 
+#### `AppCredentials` Class Diagram
+
+```mermaid
+    classDiagram
+        class ServiceClientCredentials {
+        }
+        <<abstract>> ServiceClientCredentials
+
+        class AppCredentials {
+        }
+        <<abstract>> AppCredentials
+    
+        ServiceClientCredentials <|-- AppCredentials
+
+        AppCredentials --|> MicrosoftAppCredentials
+        MicrosoftAppCredentials --|> MicrosoftGovernmentAppCredentials
+        AppCredentials --|> CertificateAppCredentials
+```
+* `ServiceClientCredentials` is an [MS REST class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.rest.serviceclientcredentials?view=azure-dotnet).
+
+#### `BotFrameworkAdapter` Creates `OAuthClient`
+``` mermaid
+    graph LR
+        BotFrameworkAdapter -. with .-> AppCredsFromSetting[AppCredentials from OAuthPromptSettings]
+        BotFrameworkAdapter -. or with .-> AppCredsFromCache[AppCredentials from Adapter's credential cache]
+        BotFrameworkAdapter -. or with .-> builtAppCredentials[newly built AppCredentials]
+        
+        AppCredsFromSetting -->  OAuthClient[creates OAuthClient]
+        AppCredsFromCache -->  OAuthClient
+        builtAppCredentials -->  OAuthClient
+
+```
+
 #### `OAuthClient` Class Diagram
 
 ```mermaid
@@ -98,7 +131,7 @@ On `TurnContext` Initialization
 
         IUserToken <|-- UserToken: gets Token from UserToken response
 ```
-* `ServiceClient` is an MS Rest class.
+* `ServiceClient` is an MS REST class.
 
 #### **JS: Token Provider in `OAuthPrompt`:**
 
