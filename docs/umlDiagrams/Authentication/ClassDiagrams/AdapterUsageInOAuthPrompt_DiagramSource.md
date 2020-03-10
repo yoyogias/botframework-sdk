@@ -40,9 +40,10 @@ C#:
             + GetUserTokenAsync()
         }
 
-        OAuthPrompt o-- BotAdapter: uses as token provider
+        TurnContext o-- BotAdapter: has a
+        OAuthPrompt o-- ICredentialTokenProvider: uses as token provider
         BotAdapter <|-- BotFrameworkAdapter
-        ICredentialTokenProvider <|-- BotFrameworkAdapter: C#: implements
+        ICredentialTokenProvider <|-- BotFrameworkAdapter: implements
         BotFrameworkAdapter *-- OAuthClient : creates OAuthClient to get tokens
 ```
 
@@ -68,7 +69,7 @@ JS:
             + GetUserTokenAsync()
         }
 
-        OAuthPrompt o-- BotAdapter: uses as token provider
+        OAuthPrompt o-- ExtendedUserTokenProvider: uses as token provider
         BotAdapter <|-- BotFrameworkAdapter
         ICredentialTokenProvider <|-- BotFrameworkAdapter: C#: implements
         BotFrameworkAdapter *-- TokenApiClient : creates TokenApiClient to get tokens

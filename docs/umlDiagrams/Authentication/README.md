@@ -141,6 +141,7 @@ Bot Framework's `OAuthPrompt` provides a way to send the User to AAD in order to
 
 ![DetailedViewOAuthPromptContinueDialogFlow](./OAuthPrompt/OAuthPrompt_ContinueDialog_DetailedView.svg "Detailed View OAuthPrompt.ContinueDialogFlow()")
 </details>
+
 ___
 
 ## Architecture of Authentication in Bot Framework
