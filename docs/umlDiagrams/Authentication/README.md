@@ -146,4 +146,4 @@ ___
 
 ## Architecture of Authentication in Bot Framework
 
-Class diagrams, showing the hierarchies involved in authentication within the Bot Framework.
+See [Auth Architecture in Bot Framework](./AuthArchitectureInBotFramework/README.md#architecture-ofauthenticationwith-oAuthPrompts) for class diagrams and flow charts, showing the hierarchies involved in authentication within the Bot Framework.
