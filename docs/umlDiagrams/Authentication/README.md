@@ -58,8 +58,8 @@ ___
 Contains diagrams of adding authentication to your bot as described by examples in BF documentation.
 
 *Click to view diagrams of the following articles:*
-- *[Authentication](#example-scenario-described-in-authentication-docs)*
-- *[Add authentciation to your bot via Azure Bot Service]()*
+- *[User authentication within a conversation](#example-scenario-described-in-user-authentication-within-a-conversation-docs)*
+- *[Add authentciation to your bot via Azure Bot Service](#example-scenario-described-in-add-authentication-to-your-bot-via-azure-bot-service)*
 ___
 
 ### **Example scenario described in [User authentication within a conversation](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) docs**
@@ -70,7 +70,7 @@ Illustrating example in [User authentication within a conversation](https://docs
 
 #### Goal
 
-![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
+![Authentication Docs Example -- Goal](./AddingAuthenticationToYourBot/UserAuthenticationWithinAConversation/AuthenticationDocExample_Goal.svg "Authentication Docs Example -- Goal")
 
 It's helpful to preview the architecture in [this block diagram](../ActivityFlow/README.md#activity-flow-participants) of participants in the flow of an activity and in the [Authenctication doc](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) example before diving into the detailed "OAuth dance" in the sequence diagram following.
 
@@ -78,7 +78,7 @@ It's helpful to preview the architecture in [this block diagram](../ActivityFlow
 
 **OAuth Flow - no access token stored in Token Service's Token Storage yet**
 
-![Authentication Doc Example - No Token in Storage](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_OAuthFlow_NoTokenToStart.svg "AuthenticationDocExample - OAuth Flow - No Token in Storage Yet")
+![Authentication Doc Example - No Token in Storage](./AddingAuthenticationToYourBot/UserAuthenticationWithinAConversation/AuthenticationDocExample_OAuthFlow_NoTokenToStart.svg "AuthenticationDocExample - OAuth Flow - No Token in Storage Yet")
 
 1. Authorization Server (AS).
     * The AS can be within Azure, such as using AAD as our token provider, or outside of Azure as well, like in the case of using GitHub as the AS.
@@ -86,7 +86,7 @@ It's helpful to preview the architecture in [this block diagram](../ActivityFlow
 
 **OAuth Flow - access token already stored in Token Service's Token Storage**
 
-![Authentication Doc Example - Token in Storage Already](./AddingAuthenticationToYourBot/Authentication/AuthenticationDocExample_OAuthFlow_HasTokenInStorage.svg "AuthenticationDocExample - OAuth Flow - Token in Storage Already")
+![Authentication Doc Example - Token in Storage Already](./AddingAuthenticationToYourBot/UserAuthenticationWithinAConversation/AuthenticationDocExample_OAuthFlow_HasTokenInStorage.svg "AuthenticationDocExample - OAuth Flow - Token in Storage Already")
 
 ___
 ### **Example scenario described in [Add authentication to your bot via Azure Bot Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp)**
