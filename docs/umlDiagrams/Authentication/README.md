@@ -62,9 +62,9 @@ Contains diagrams of adding authentication to your bot as described by examples 
 - *[Add authentciation to your bot via Azure Bot Service]()*
 ___
 
-### **Example scenario described in [Authentication](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) docs**
+### **Example scenario described in [User authentication within a conversation](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0) docs**
 
-Illustrating example in [Authentication docs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0#about-the-bot-framework-token-service), deep diving into the details of OAuth flow with the user, Bot Framework Token Service and the bot.
+Illustrating example in [User authentication within a conversation](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-authentication?view=azure-bot-service-4.0#about-the-bot-framework-token-service), deep diving into the details of OAuth flow with the user, Bot Framework Token Service and the bot.
 
 > "For example, a bot that can check a user's recent emails, using the Microsoft Graph API, will require an Azure Active Directory user token. At design time, the bot developer would register an Azure Active Directory application with the Bot Framework Token Service (via the Azure Portal), and then configure an OAuth connection setting (named `GraphConnection`) for the bot."
 
@@ -145,5 +145,100 @@ Bot Framework's `OAuthPrompt` provides a way to send the User to AAD in order to
 ___
 
 ## Architecture of Authentication in Bot Framework
+Class diagrams and flow charts exlaining the structure of `OAuthPrompt` authentication and authorization in the Bot Framework.
 
-See [Auth Architecture in Bot Framework](./AuthArchitectureInBotFramework/README.md#architecture-ofauthenticationwith-oAuthPrompts) for class diagrams and flow charts, showing the hierarchies involved in authentication within the Bot Framework.
+- [Channel to Bot Authentication](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-4.0)
+- [OAuthPrompt](#OAuthPrompt-architecture)
+
+___
+
+## Channel to Bot Authentication
+See [Authentication](https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-authentication?view=azure-bot-service-4.0) docs for more details.
+
+___
+
+## `OAuthPrompt` Architecture
+Class diagrams and flow charts illustrating the structural components related to authentication using an `OAuthPrompt`.
+
+### **Adapter and `TurnContext`**
+
+![ProcessActivity creates TurnContext](./AuthArchitectureInBotFramework/OAuthPrompt/ProcessActivityCreatesTurnContext.svg "ProcessActivity creates TurnContext")
+
+On `TurnContext` Initialization
+
+![Adapter saved as member on TurnContext](./AuthArchitectureInBotFramework/OAuthPrompt/AdapterSavedAsTurnContextMember.svg "Adapter saved as member on TurnContext")
+
+`OAuthPrompt` has various methods* that uses `BotAdapter` within its logic:
+
+![Takes Adapter from TurnContext](./AuthArchitectureInBotFramework/OAuthPrompt/TakesAdapterFromTurnContext.svg "Takes Adapter from TurnContext")
+
+* `OAuthPrompt` methods that use `BotAdapter`: `BeginDialogAsync()`, `GetUserTokenAsync()`, `SignUserOutAsync()`, `SendOAuthCardAsync()`, `RecognizeTokenAsync()`
+
+### **Class Diagrams of `OAuthPrompt` and How It Acquires Tokens**
+- [C#](#c-how-oauthprompt-retrieves-a-token)
+- [JS](#js-how-oauthprompt-retrieves-a-token)
+
+Notes:
+- These class diagrams obscure some class properties in order to better highlight the portions related specifically to authentication and authorization.
+- Class diagrams are *read from top to bottom* (regarding the relativity of which class the link notes pertain to)
+
+#### **C#: How `OAuthPrompt` Retrieves a Token:**
+
+`OAuthPrompt` uses a `BotFrameworkAdapter` that implements `ICredentialTokenProvider` to acquire tokens.
+
+![OAuthPrompt and Token Provider](./AuthArchitectureInBotFramework/OAuthPrompt/CSharp_OAuthPromptAndTokenProvider.svg "OAuthPrompt and Token Provider")
+
+
+
+#### Use `AppCredentials` to create an `OAuthClient`
+- The `OAuthPrompt`'s `ICredentialTokenProvider` creates an `OAuthClient` to send a request to get a token.
+- You must use `ServiceClientCredentials` in order to initialize an `OAuthClient` instance.
+
+![Use AppCredentials to create OAuthClient](./AuthArchitectureInBotFramework/OAuthPrompt/CSharp_UseAppCredentialsToCreateOAuthClient.svg "Use AppCredentials to create OAuthClient")
+
+#### `AppCredentials` Class Diagram
+
+![AppCredentials Class Diagram](./AuthArchitectureInBotFramework/OAuthPrompt/CSharp_AppCredentialsClassDiagram.svg "AppCredentials Class Diagram")
+* `ServiceClientCredentials` is an [MS REST class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.rest.serviceclientcredentials?view=azure-dotnet).
+
+#### Participants Involved in Building `AppCredentials`
+
+![BuildAppCredentials Participants](./AuthArchitectureInBotFramework/OAuthPrompt/BuildAppCredentialsParticipants.svg "BuildAppCredentials Participants")
+
+
+#### `BotFrameworkAdapter` Creates `OAuthClient`
+
+![BotFrameworkAdapter creates OAuthClient](./AuthArchitectureInBotFramework/OAuthPrompt/BotFrameworkAdapterCreatesOAuthClient.svg "BotFrameworkAdapter creates OAuthClient")
+
+#### `OAuthClient` Class Diagram
+
+![OAuthClient Class Diagram](./AuthArchitectureInBotFramework/OAuthPrompt/OAuthClientClassDiagram.svg "OAuthClient Class Diagram")
+* `HttpOperationResponseTokenResponse` should be `HttpOperationResponse<TokenResponse>` (diagram tool breaks on special chars in class diagram).
+* `ServiceClient` is an [MS REST class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.rest.serviceclient-1?view=azure-dotnet).
+
+#### **JS: How `OAuthPrompt` Retrieves a Token:**
+
+`OAuthPrompt` uses a `BotFrameworkAdapter` that implements `ExtendedUserTokenProvider` to acquire tokens.
+
+![OAuthPrompt and Token Provider Class Diagram](./AuthArchitectureInBotFramework/OAuthPrompt/JS_OAuthPromptAndTokenProvider.svg "OAuthPrompt and Token Provider Class Diagram")
+
+#### Use `AppCredentials` to create a `TokenApiClient`
+- The `OAuthPrompt`'s `ExtendedUserTokenProvider` creates a `TokenApiClient` to send a request to get a token.
+- You must use `ServiceClientCredentials` in order to initialize an `TokenApiClient` instance.
+
+![Use AppCredentials to create a TokenApiClient](./AuthArchitectureInBotFramework/OAuthPrompt/JS_UseAppCredentialsToCreateTokenApiClient.svg "Use AppCredentials to create a TokenApiClient")
+
+#### `AppCredentials` Class Diagram
+
+![AppCredentials class diagram](./AuthArchitectureInBotFramework/OAuthPrompt/JS_AppCredentialsClassDiagram.svg "AppCredentials class diagram")
+* `ServiceClientCredentials` is an [ms-rest interface](https://github.com/Azure/ms-rest-js/blob/master/lib/credentials/serviceClientCredentials.ts).
+
+#### `BotFrameworkAdapter` Creates `TokenApiClient`
+
+![BotFrameworkAdapter creates TokenApiClient](./AuthArchitectureInBotFramework/OAuthPrompt/BotFrameworkAdapterCreatesTokenApiClient.svg "BotFrameworkAdapter creates TokenApiClient")
+
+#### `TokenApiClient` Class Diagram
+
+![TokenApiClient Class Diagram](./AuthArchitectureInBotFramework/OAuthPrompt/TokenApiClientClassDiagram.svg "TokenApiClient Class Diagram")
+* `TokenApiClient` and `TokenApiClientContext` are classes generated by auto-rest.
+* `ServiceClient` is an [msrest class](https://github.com/Azure/ms-rest-js/blob/master/lib/serviceClient.ts).
