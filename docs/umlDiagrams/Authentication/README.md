@@ -141,7 +141,7 @@ On `TurnContext` Initialization
 
 ![Takes Adapter from TurnContext](./AuthArchitectureInBotFramework/OAuthPrompt/TakesAdapterFromTurnContext.svg "Takes Adapter from TurnContext")
 
-* `OAuthPrompt` methods that use `BotAdapter`: `BeginDialogAsync()`, `GetUserTokenAsync()`, `SignUserOutAsync()`, `SendOAuthCardAsync()`, `RecognizeTokenAsync()`
+* `OAuthPrompt` uses `BotFrameworkAdapter` as its implementation of `BotAdapter`. Methods in `OAuthPrompt` that use this adapter: `BeginDialogAsync()`, `GetUserTokenAsync()`, `SignUserOutAsync()`, `SendOAuthCardAsync()`, `RecognizeTokenAsync()`
 
 ### **Class Diagrams of `OAuthPrompt` and How It Acquires Tokens**
 - [C#](#c-how-oauthprompt-retrieves-a-token)
