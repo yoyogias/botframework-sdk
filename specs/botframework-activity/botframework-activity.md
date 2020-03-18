@@ -1233,7 +1233,7 @@ The `semanticEntityInstance` type references to source information about where t
 
 ## References
 
-1. [Bot Framework Protocol](../botframework-protocol/botframework-channels.json)
+1. [Bot Framework Protocol](../botframework-protocol/botframework-channel.json)
 2. [RFC 2119](https://tools.ietf.org/html/rfc2119) -- *Key words for use in RFCs to Indicate Requirement Levels*
 3. [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) -- *Date and time format*
 4. [RFC 3987](https://tools.ietf.org/html/rfc3987) -- *Internationalized Resource Identifiers (IRIs)*
