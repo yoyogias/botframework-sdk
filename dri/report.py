@@ -70,6 +70,8 @@ BYPASS_USERFILTER_REPOS = [
 MICROSFT_EMPLOYEES = [
     'automationteamva',
     'awalia13',
+    'omega1119',
+    'Valentyn-Chornovol',
     'batta32',
     'bill7zz',
     'clearab',
